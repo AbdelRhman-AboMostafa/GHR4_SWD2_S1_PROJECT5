@@ -1,0 +1,291 @@
+/* SPLIT SCREEN MAIN CONTAINER HULL */
+.splitScreenWrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+/* LEFT HERO COLUMN */
+.heroColumn {
+  flex: 1.4; /* Locks layout proportions exactly with the login view */
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 4rem;
+  overflow: hidden;
+}
+
+.bgImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.darkOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.85));
+  z-index: 1;
+}
+
+/* FLOATING HOME LINK */
+.backHomeLink {
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #94a3b8 !important;
+  text-decoration: none !important;
+  font-size: 0.925rem;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.backHomeLink:hover {
+  color: #0471AB !important;
+}
+
+/* INNER TEXT POSITIONING FOR IMAGE PANEL */
+.heroContent {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  max-width: 560px;
+}
+
+.brandIconBox {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.brandText {
+  font-weight: 700;
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.mainDisplayTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.highlightText {
+  color: #0471AB; 
+}
+
+.heroSubtitle {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+/* STEPS WIDGET DECORATIONS */
+.stepsLayoutGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stepItemCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.stepBadgeCounter {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #38bdf8;
+  flex-shrink: 0;
+}
+
+.stepLabelHeader {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.15rem 0;
+  color: #f8fafc;
+}
+
+.stepLabelBody {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* RIGHT COLUMN (TIGHT & CRISP WIDTH HULL) */
+.formColumn {
+  flex: 0.9; 
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  z-index: 2;
+}
+
+.formContainerWidth {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* TYPOGRAPHY STRUCTURE */
+.formTitle {
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 1.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.formSubtitle {
+  color: #64748b;
+  font-size: 0.925rem;
+  margin-bottom: 2.5rem;
+}
+
+.inputLabel {
+  display: block;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+/* FORM FIELDS */
+.formInputField {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 0.75rem !important;
+  padding: 0.8rem 1rem 0.8rem 3rem !important;
+  color: #0f172a !important;
+  font-size: 0.95rem !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.formInputField:focus {
+  border-color: #0471AB !important;
+  background-color: #ffffff !important;
+}
+
+.innerFormIcon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+/* SUBMIT BUTTON ACCENT */
+.submitButton {
+  background-color: #0471AB !important;
+  border: none !important;
+  color: #ffffff !important;
+  width: 100%;
+  padding: 0.9rem !important;
+  font-weight: 700 !important;
+  border-radius: 0.75rem !important;
+  font-size: 0.95rem !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.submitButton:hover {
+  background-color: #035b8a !important;
+}
+
+/* LOWER INTERACTIVE FOOTNOTES */
+.termsAgreementFootnote {
+  color: #64748b;
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  line-height: 1.4;
+}
+
+.switchScreenFootnote {
+  color: #64748b;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.inlineActionLink {
+  color: #0471AB;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.inlineActionLink:hover {
+  text-decoration: underline;
+}
+
+/* TRANSITION LOADER COMPONENTS */
+.spinnerIcon {
+  animation: spin 1s linear infinite;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.transitionOverlayContainer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #075985 0%, #0ea5e9 50%, #7dd3fc 100%);
+  overflow: hidden;
+}
+
+.animatedCloud {
+  position: absolute;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 100px;
+  filter: blur(40px);
+  z-index: 10;
+}
+
+.animatedPlaneWrapper {
+  position: absolute;
+  width: 450px;
+  z-index: 50;
+}
+
+.boardingText {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 15px;
+  text-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}

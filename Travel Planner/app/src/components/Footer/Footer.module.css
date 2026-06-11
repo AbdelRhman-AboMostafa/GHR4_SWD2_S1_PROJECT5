@@ -1,0 +1,83 @@
+/* CONTAINER BASE HOUSING */
+.footerContainer {
+  background: #0f172a !important; /* Perfect match matching your exact container backdrop */
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* TYPOGRAPHY BRAND STYLING */
+.brandTitle {
+  color: #0ea5e9 !important; /* Bright sky brand primary */
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.brandDescription {
+  color: #94a3b8 !important; /* Slate accent tone */
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* INTERMEDIARY SYSTEM HEADINGS */
+.columnHeading {
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 18px;
+}
+
+/* LINKS AND FEATURE LAYERS */
+.footerLink {
+  color: #94a3b8 !important;
+  font-size: 14px;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+  width: fit-content;
+}
+
+.footerLink:hover {
+  color: #0ea5e9 !important; /* Glow response accent */
+}
+
+.featureText {
+  color: #94a3b8 !important;
+  font-size: 14px;
+}
+
+/* DIVIDER & LOWER SUB-BAR ELEMENTS */
+.bottomBar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding-top: 20px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .bottomBar {
+    flex-direction: row;
+  }
+}
+
+.copyrightText {
+  color: #64748b !important; /* Dimmed slate for lower sub-notes */
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.bottomLink {
+  color: #64748b !important;
+  font-size: 13px;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.bottomLink:hover {
+  color: #0ea5e9 !important;
+}

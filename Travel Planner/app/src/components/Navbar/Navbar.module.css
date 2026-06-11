@@ -1,0 +1,156 @@
+/* NAVBAR HOUSING */
+.navbarContainer {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  padding: 6px 0px;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+/* BRAND LOGO AREA */
+.brand {
+  color: #0f172a !important;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.brand:hover .brandText {
+  color: #0ea5e9 !important;
+}
+
+.brandText {
+  color: #0f172a !important;
+  transition: color 0.2s ease;
+}
+
+.planeIcon {
+  color: #0ea5e9;
+  padding: 3px;
+  rotate: 45deg;
+  border-radius: 6px;
+}
+
+/* NAVIGATION LINKS */
+.navLink {
+  color: #475569;
+  font-weight: 500;
+  padding: 8px 16px;
+  position: relative;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.navLink:hover {
+  color: #0ea5e9;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  bottom: 0px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #0ea5e9, #7dd3fc);
+  transition: all 0.5s ease;
+  border-radius: 10px;
+}
+
+.navLink:hover::after,
+.active::after {
+  width: 20%;
+}
+
+/* ACTIVE HIGHLIGHT STATE */
+.active {
+  color: #0ea5e9 !important;
+}
+
+/* AUTH BUTTONS */
+.btnLog {
+  background: #ffffff;
+  color: #0f172a;
+  text-decoration: none;
+  padding: 7px 18px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btnLog:hover {
+  border-color: #0ea5e9;
+  box-shadow: 0 6px 12px rgba(14, 165, 233, 0.06);
+  color: #0ea5e9;
+}
+
+.btnReg {
+  background: linear-gradient(135deg, #0ea5e9, #0369a1);
+  color: white;
+  text-decoration: none;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(14, 165, 233, 0.15);
+}
+
+.btnReg:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(14, 165, 233, 0.25);
+}
+
+.btnLogout {
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+/* USER PROFILE AVATAR COMPONENT */
+.profileBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 20px;
+  transition: background 0.2s ease;
+}
+
+.profileBadge:hover {
+  background: #f1f5f9;
+}
+
+.avatarCircle {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  color: #0ea5e9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.profileBadge:hover .avatarCircle {
+  background-color: #0ea5e9;
+  color: #ffffff;
+}
+
+.profileName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
