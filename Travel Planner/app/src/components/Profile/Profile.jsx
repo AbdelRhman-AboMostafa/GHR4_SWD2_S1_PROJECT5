@@ -180,40 +180,7 @@ export default function Profile() {
           </div>
         </div>
 
-        <div className={styles.tripsSection}>
-          <h3 className={styles.sectionTitle}>Your Last Trips</h3>
-          {loadingTrips ? (
-            <p>Loading trips...</p>
-          ) : bookedTrips && bookedTrips.length > 0 ? (
-            <div className={styles.tripsGrid}>
-              {bookedTrips.map((trip, idx) => {
-                const destLower = (trip.destination || '').toLowerCase();
-                let imgSrc = '/images/destinations.png'; // default fallback
-                if (destLower.includes('paris')) imgSrc = '/images/paris.png';
-                else if (destLower.includes('bali')) imgSrc = '/images/bali.png';
-                else if (destLower.includes('new york')) imgSrc = '/images/hero.png';
-                else if (destLower.includes('dubai')) imgSrc = '/images/dubai.png';
 
-                return (
-                  <div className={styles.tripCard} key={idx}>
-                    <img
-                      src={imgSrc}
-                      alt={trip.destination || 'Trip'}
-                      className={styles.tripImage}
-                    />
-                    <div className={styles.tripInfo}>
-                      <h4>{trip.origin || "Origin"} to {trip.destination || "Destination"}</h4>
-                      <p>Status: {trip.status || "Unknown"}</p>
-                      <p>Date: {trip.tripDate || "N/A"}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          ) : (
-            <p>No booked trips found yet.</p>
-          )}
-        </div>
       </div>
     </div>
   );
