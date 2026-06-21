@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react"; 
+import React, { useState, useRef, useEffect } from "react"; 
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { doc, addDoc, collection, setDoc, serverTimestamp } from "firebase/firestore";
 import { toast } from "react-toastify";
@@ -27,6 +28,7 @@ export default function Flights() {
   const API_KEY = import.meta.env.VITE_RAPIDAPI_KEY; 
   //.meta.env is a special object provided by vite that holds all the environment variables it can access
   //vite_rapidapi_key :tells vite to look inside your .env file and find the variable   
+  const location = useLocation();
 
   const [fromText, setFromText] = useState(""); //variable for from input
   const [toText, setToText] = useState(""); //variable for to input
@@ -51,10 +53,14 @@ export default function Flights() {
   const [sortBy, setSortBy] = useState("low-to-high"); //default sorting = cheapest first
 
   const timeoutRef = useRef(null); //stores debounce(waiting until the user stops writing) timer
-  //When a user is typing into a search bar, you don't want to trigger an API call on every single keystroke
-  //Instead, you want to wait until they pause typing for a moment before fetching the data.
-  // if we use useref not usestate as when write a letter re render happens and start timer (wait 500ms) , then type b ,  rerender happen, cancer old timer start old timer and so on 
-  // as if we didnt use useref we cant store the timer so it would be null, so we lost its id so we cant cancel itand u lose control 
+
+  useEffect(() => {
+    if (location.state?.queryTo) {
+      setToText(location.state.queryTo);
+      // Automatically attempt to fetch autocomplete data so they can click it instantly
+      searchPlaces(location.state.queryTo, setToResults);
+    }
+  }, [location.state]);
 
   const searchPlaces = (query, setter) => { // query -> what the user typed, setter -> a function used to store results in state
     if (timeoutRef.current) clearTimeout(timeoutRef.current); //If there is already a waiting timer, cancel it,, Because the user is still typing.

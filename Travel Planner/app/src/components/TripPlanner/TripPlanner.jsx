@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 
 export default function TripPlanner() {
+  const location = useLocation();
   const [userInput, setUserInput] = useState("");
   const [recommendation, setRecommendation] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (location.state?.query) {
+      setUserInput(location.state.query);
+    }
+  }, [location.state]);
 
   const handleRecommend = async () => {
     if (!userInput.trim()) return;

@@ -18,6 +18,7 @@ import Dashboard from './components/Dashboard/Dashboard'
 import SavedFlights from './components/SavedFlights/SavedFlights'
 import PastTrips from './components/PastTrips/PastTrips'
 import UserContextProvider from './context/userContext';
+import TripsContextProvider from './context/TripsContext';
 
 
 function App() {
@@ -42,10 +43,11 @@ function App() {
   ])
 
   return (
-    
     <UserContextProvider>
-      <ToastContainer position="top-right" />
-      <RouterProvider router = {paths}></RouterProvider>
+      <TripsContextProvider>
+        <ToastContainer position="top-right" />
+        <RouterProvider router={paths}></RouterProvider>
+      </TripsContextProvider>
     </UserContextProvider>
   )
 }
