@@ -185,6 +185,24 @@ export default function Flights() {
       return;
     }
 
+    //check if trip booked before
+    const q = query(
+      collection(db, "bookedTrips"),
+      where("userId", "==", user.uid),
+    );
+
+    const snapshot = await getDocs(q);
+    const alreadyBooked = snapshot.docs.some((doc) => {
+      const bookedFlight = doc.data().flightDetails;
+
+      return bookedFlight?.id === flight?.id;
+    });
+    if (alreadyBooked) {
+      toast.warning("Trip already booked!");
+      return;
+    }
+
+
     try {
       await addDoc(collection(db, "bookedTrips"), { //creates new document in "bookedTrips" collection
         userId: user.uid,
