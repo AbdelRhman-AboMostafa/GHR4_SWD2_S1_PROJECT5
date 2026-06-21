@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { auth, db } from "../../firebase";
+import { getAuth } from "firebase/auth";
 
 export default function TripPlanner() {
   const [userInput, setUserInput] = useState("");
@@ -16,7 +19,7 @@ export default function TripPlanner() {
 
     try {
       const response = await axios.post(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`,
         {
           contents: [
             {
@@ -44,19 +47,32 @@ JSON format:
               ],
             },
           ],
-        }
+        },
       );
 
-      let text =
-        response.data.candidates?.[0]?.content?.parts?.[0]?.text || "";
+      let text = response.data.candidates?.[0]?.content?.parts?.[0]?.text || "";
 
       // IMPORTANT: clean possible markdown or extra text
-      text = text.replace(/```json/g, "").replace(/```/g, "").trim();
+      text = text
+        .replace(/```json/g, "")
+        .replace(/```/g, "")
+        .trim();
 
       // parse JSON safely
       const parsed = JSON.parse(text);
 
       setRecommendation(parsed);
+      // save recommendations to firestore
+      const user = getAuth().currentUser;
+
+      if (user) {
+        await addDoc(collection(db, "aiPlans"), {
+          userId: user.uid,
+          input: userInput,
+          result: parsed,
+          createdAt: serverTimestamp(),
+        });
+      }
     } catch (err) {
       console.log(err);
       setError("Failed to generate trip. Try again.");
@@ -88,19 +104,31 @@ JSON format:
           <h3>AI Recommendation</h3>
 
           <div style={{ background: "#f5f5f5", padding: 15 }}>
-            <p><b>Destination:</b> {recommendation.destination}</p>
-            <p><b>Best Months:</b> {recommendation.bestMonths}</p>
-            <p><b>Duration:</b> {recommendation.duration}</p>
-            <p><b>Reason:</b> {recommendation.reason}</p>
+            <p>
+              <b>Destination:</b> {recommendation.destination}
+            </p>
+            <p>
+              <b>Best Months:</b> {recommendation.bestMonths}
+            </p>
+            <p>
+              <b>Duration:</b> {recommendation.duration}
+            </p>
+            <p>
+              <b>Reason:</b> {recommendation.reason}
+            </p>
 
-            <p><b>Hotels:</b></p>
+            <p>
+              <b>Hotels:</b>
+            </p>
             <ul>
               {recommendation.hotels?.map((h, i) => (
                 <li key={i}>{h}</li>
               ))}
             </ul>
 
-            <p><b>Landmarks:</b></p>
+            <p>
+              <b>Landmarks:</b>
+            </p>
             <ul>
               {recommendation.landmarks?.map((l, i) => (
                 <li key={i}>{l}</li>
