@@ -63,10 +63,10 @@ export default function Home() {
     <div>
       <section className={styles.hero}>
         <div className={styles.heroBg}>
-          <img className={styles.heroBgImage} src="/images/hero.png" alt="Beautiful landscape" />
+          <img className={styles.heroBgImage} src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2600&auto=format&fit=crop" alt="Beautiful landscape" />
         </div>
         <div className={styles.heroContent}>
-          <div className={styles.heroEyebrow}>✦ AI-Powered Travel Planning</div>
+
           <h1 className={styles.heroTitle}>
             PLAN YOUR<br />
             <span className={styles.acc}>NEXT TRIP</span>
@@ -125,7 +125,7 @@ export default function Home() {
         <div className={styles.sectionTitle}>Trending Destinations</div>
         <div className={styles.sectionSub}>Handpicked places travellers are booking this season</div>
         <div className={styles.destGrid}>
-          <div className={styles.destCard} onClick={() => navigate('/flights', { state: { queryTo: 'Dubai' } })}>
+          <div className={styles.destCard} onClick={() => navigate('/destinations', { state: { query: 'Dubai' } })}>
             <div className={styles.destImgContainer}>
               <img src="/images/dubai.png" className={styles.destRealImg} alt="Dubai" />
               <div className={`${styles.destBadge} ${styles.hot}`}>HOT</div>
@@ -136,7 +136,7 @@ export default function Home() {
               <div className={styles.destPrice}>from $340</div>
             </div>
           </div>
-          <div className={styles.destCard} onClick={() => navigate('/flights', { state: { queryTo: 'Paris' } })}>
+          <div className={styles.destCard} onClick={() => navigate('/destinations', { state: { query: 'Paris' } })}>
             <div className={styles.destImgContainer}>
               <img src="/images/paris.png" className={styles.destRealImg} alt="Paris" />
               <div className={`${styles.destBadge} ${styles.top}`}>TOP</div>
@@ -147,7 +147,7 @@ export default function Home() {
               <div className={styles.destPrice}>from $520</div>
             </div>
           </div>
-          <div className={styles.destCard} onClick={() => navigate('/flights', { state: { queryTo: 'Bali' } })}>
+          <div className={styles.destCard} onClick={() => navigate('/destinations', { state: { query: 'Bali' } })}>
             <div className={styles.destImgContainer}>
               <img src="/images/bali.png" className={styles.destRealImg} alt="Bali" />
             </div>
@@ -179,7 +179,7 @@ export default function Home() {
               else if (destCity.includes('dubai')) imgSrc = '/images/dubai.png';
 
               return (
-                <div key={idx} className={styles.liveFlightCard} onClick={() => navigate('/flights')} style={{cursor: 'pointer'}}>
+                <div key={idx} className={styles.liveFlightCard} onClick={() => navigate('/destinations', { state: { query: leg?.destination?.city || destCity } })} style={{cursor: 'pointer'}}>
                   <div className={styles.lfImageContainer}>
                     <img 
                       src={imgSrc} 

@@ -27,12 +27,14 @@
 }
 
 .header {
-  background: #fff;
-  border: 1px solid #d0e3f5;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(208, 227, 245, 0.8);
   border-radius: 16px;
   padding: 32px;
   margin-bottom: 24px;
-  box-shadow: 0 2px 16px rgba(26,127,212,0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
 }
 
 .avatarGroup {
@@ -58,16 +60,27 @@
   align-items: center;
   justify-content: center;
   border: 4px solid #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.heroBanner { width: 100%; height: 160px; margin-bottom: -60px; overflow: hidden; }
-.bannerImage { width: 100%; height: 100%; object-fit: cover; }
+.heroBanner {
+  width: 100%;
+  height: 160px;
+  margin-bottom: -60px;
+  overflow: hidden;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .userName {
   font-size: 32px;
   font-weight: 900;
   background: linear-gradient(90deg, #1a7fd4, #0ea5e9);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #1a7fd4;
@@ -97,7 +110,7 @@
   border: 1px solid #d0e3f5;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 2px 16px rgba(26,127,212,0.08);
+  box-shadow: 0 2px 16px rgba(26, 127, 212, 0.08);
 }
 
 .cardHeader {
@@ -179,11 +192,50 @@
   font-weight: 700;
 }
 
-.tripsSection { margin-top: 40px; }
-.sectionTitle { font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 20px; }
-.tripsGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
-.tripCard { background: #fff; border: 1px solid #d0e3f5; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(26,127,212,0.08); }
-.tripImage { width: 100%; height: 120px; object-fit: cover; }
-.tripInfo { padding: 12px; }
-.tripInfo h4 { font-size: 14px; font-weight: 700; margin: 0 0 4px 0; color: #0f172a; }
-.tripInfo p { font-size: 12px; color: #64748b; margin: 0; }
+.tripsSection {
+  margin-top: 40px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.tripsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.tripCard {
+  background: #fff;
+  border: 1px solid #d0e3f5;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(26, 127, 212, 0.08);
+}
+
+.tripImage {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.tripInfo {
+  padding: 12px;
+}
+
+.tripInfo h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: #0f172a;
+}
+
+.tripInfo p {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+}

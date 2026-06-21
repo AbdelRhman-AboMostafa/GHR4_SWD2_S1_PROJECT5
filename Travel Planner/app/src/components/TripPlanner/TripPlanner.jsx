@@ -12,11 +12,13 @@ export default function TripPlanner() {
   useEffect(() => {
     if (location.state?.query) {
       setUserInput(location.state.query);
+      handleRecommend(location.state.query);
     }
   }, [location.state]);
 
-  const handleRecommend = async () => {
-    if (!userInput.trim()) return;
+  const handleRecommend = async (overrideInput = "") => {
+    const queryStr = typeof overrideInput === "string" ? overrideInput : userInput;
+    if (!queryStr.trim()) return;
 
     setLoading(true);
     setError("");
@@ -36,7 +38,7 @@ You are a travel planner assistant.
 Return ONLY valid JSON. No markdown, no explanations, no extra text.
 
 User request:
-${userInput}
+${queryStr}
 
 JSON format:
 {
