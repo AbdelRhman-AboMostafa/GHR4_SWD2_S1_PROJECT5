@@ -1,0 +1,215 @@
+.main {
+  background-color: #eef4fb;
+}
+
+.sidebar {
+  background-color: #ffffff;
+  height: 100vh;
+
+  position: sticky;
+  top: 0;
+}
+
+.sectionHeader {
+  color: #8d98a6;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.sidebarLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  color: #475569;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+.sidebarLink:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.activeLink {
+  background-color: #eff6ff !important;
+  color: #2563eb !important;
+}
+
+.badgeBlue {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.statCard {
+  border: 1.5px solid #cbd5e1 !important;
+  background-color: #ffffff !important;
+}
+
+.flightCard {
+  border: 1.5px solid #cbd5e1 !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+  background-color: #ffffff;
+  height: 65vh;
+}
+
+.cardHeader {
+  background-color: #f0f5ff !important;
+  border-bottom: 1.5px solid #cbd5e1 !important;
+}
+
+.cardTitle {
+  color: #0f172a;
+  margin-bottom: 0;
+  font-size: 15px;
+}
+
+.viewAllLink {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.viewAllLink:hover {
+  color: #3756ae;
+}
+
+.flightRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.flightRow:not(:last-child) {
+  border-bottom: 1.5px solid #cbd5e1 !important;
+}
+
+.airlineCode {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 15px;
+  min-width: 45px;
+}
+
+.flightRoute {
+  font-weight: 500;
+  color: #0f172a;
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.flightPrice {
+  color: #2563eb !important;
+  font-weight: 500;
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+.deleteBtn {
+  font-size: 10px;
+  background-color: #ffe4e6 !important;
+  border: none !important;
+  color: #f43f5e !important;
+  padding: 5px 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.deleteBtn:hover {
+  background-color: #fecdd3 !important;
+}
+
+.tripCard {
+  border: 1.5px solid #cbd5e1 !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.tripRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.tripRow:not(:last-child) {
+  border-bottom: 1.5px solid #cbd5e1 !important;
+}
+
+.tripRoute {
+  font-weight: 500;
+  color: #0f172a;
+  font-size: 15px;
+}
+
+.tripDate {
+  color: #94a3b8;
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 10px;
+}
+
+.actionCard {
+  border: 1.5px solid #cbd5e1 !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.actionHeader {
+  border-bottom: 1.5px solid #cbd5e1 !important;
+  display: flex;
+  align-items: center;
+
+  padding: 8px;
+  background-color: #f0f5ff;
+}
+
+.actionBody {
+  padding: 1.25rem;
+  background-color: #f8fafc;
+}
+
+.actionBtn {
+  width: 100%;
+  background-color: #eff6ff !important;
+  border: 1.5px solid #bfdbfe !important;
+  color: #1e40af !important;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.actionBtn:hover {
+  background-color: #dbeafe !important;
+  border-color: #93c5fd !important;
+}
