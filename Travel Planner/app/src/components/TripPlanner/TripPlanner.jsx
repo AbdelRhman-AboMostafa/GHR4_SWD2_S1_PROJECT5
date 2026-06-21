@@ -1,17 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { auth, db } from "../../firebase";
 import { getAuth } from "firebase/auth";
 
 export default function TripPlanner() {
+  const location = useLocation();
   const [userInput, setUserInput] = useState("");
   const [recommendation, setRecommendation] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleRecommend = async () => {
-    if (!userInput.trim()) return;
+  useEffect(() => {
+    if (location.state?.query) {
+      setUserInput(location.state.query);
+      handleRecommend(location.state.query);
+    }
+  }, [location.state]);
+
+  const handleRecommend = async (overrideInput = "") => {
+    const queryStr = typeof overrideInput === "string" ? overrideInput : userInput;
+    if (!queryStr.trim()) return;
 
     setLoading(true);
     setError("");
@@ -31,7 +41,7 @@ You are a travel planner assistant.
 Return ONLY valid JSON. No markdown, no explanations, no extra text.
 
 User request:
-${userInput}
+${queryStr}
 
 JSON format:
 {
