@@ -103,10 +103,10 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
                 } 
-                to="/tripPlanner"
+                to="/planner"
                 onClick={closeMobileMenu}
               >
-                Trip Planner
+                Planner
               </NavLink>
             </li>
 

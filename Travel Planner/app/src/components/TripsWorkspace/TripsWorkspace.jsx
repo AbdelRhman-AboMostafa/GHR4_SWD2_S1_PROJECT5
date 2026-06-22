@@ -146,7 +146,7 @@ export default function TripsWorkspace() {
                 Start planning your next adventure with AI-powered recommendations
               </p>
               <button
-                onClick={() => navigate("/tripPlanner")}
+                onClick={() => navigate("/planner")}
                 className={styles.actionButton}
               >
                 Plan a New Trip
