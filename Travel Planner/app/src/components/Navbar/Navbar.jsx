@@ -129,6 +129,18 @@ export default function Navbar() {
                     className={({ isActive }) =>
                       isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
                     } 
+                    to="/tripsWorkspace"
+                    onClick={closeMobileMenu}
+                  >
+                    Trips Workspace
+                  </NavLink>
+                </li>
+
+                <li className="nav-item">
+                  <NavLink 
+                    className={({ isActive }) =>
+                      isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+                    } 
                     to="/profile"
                     onClick={closeMobileMenu}
                   >

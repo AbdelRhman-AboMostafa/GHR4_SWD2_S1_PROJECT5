@@ -1,0 +1,228 @@
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.cardMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.airlineBadge {
+  width: 48px;
+  height: 48px;
+  background: #f8fafc;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.badgeCode {
+  font-weight: 700;
+  font-size: 14px;
+  color: #334155;
+  letter-spacing: 0.5px;
+}
+
+.journeyContainer {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 580px;
+  min-width: 280px;
+}
+
+.routeNode {
+  display: flex;
+  flex-direction: column;
+  min-width: 70px;
+}
+
+.airportCode {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.cityName {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 1px;
+}
+
+.timeLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  margin-top: 4px;
+}
+
+.timelineTrack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 0 24px;
+  position: relative;
+}
+
+.timelineDuration {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+
+.lineWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.horizontalLine {
+  flex: 1;
+  height: 2px;
+  background: #e2e8f0;
+}
+
+.planeIcon {
+  color: #0ea5e9;
+  margin: 0 8px;
+  font-size: 14px;
+}
+
+.timelineStops {
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.nonstop {
+  color: #10b981;
+}
+
+.hasStops {
+  color: #f97316;
+}
+
+.pricingSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  min-width: 110px;
+}
+
+.priceAmount {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0284c7;
+  line-height: 1;
+}
+
+.pricePerAdult {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.detailPanel {
+  border-top: 1px solid #f1f5f9;
+  background: #f8fafc;
+  padding: 24px;
+}
+
+.metaDataGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metaLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+}
+
+.metaValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.metaValueConfirmed {
+  font-size: 14px;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+.cardActions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+}
+
+.detailBtn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 8px 14px;
+  color: #475569;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.detailBtn:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.removeBtn {
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #ef4444;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.removeBtn:hover {
+  background: #fee2e2;
+  border-color: #fecdd3;
+}
