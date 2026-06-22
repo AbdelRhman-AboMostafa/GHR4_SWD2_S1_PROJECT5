@@ -57,7 +57,7 @@ export default function Dashboard() {
     console.log("Flights:", flights);
   }, [flights]);
 
-  // ==============================================================================
+ 
   // delete flight from saved flights
   const handleDeleteFlight = async (firebaseDocId) => {
     console.log("Deleting:", firebaseDocId);
@@ -113,7 +113,7 @@ export default function Dashboard() {
   console.log(flights);
   console.log(recentTrips);
 
-  //number of booked trips
+ // number of booked trips (upcoming only)
   useEffect(() => {
     const currentUser = getAuth().currentUser;
     if (!currentUser) return;
@@ -124,11 +124,20 @@ export default function Dashboard() {
     );
 
     const unsubscribe = onSnapshot(q, (snapshot) => {
-      setBookedTripsCount(snapshot.size);
+      const now = new Date();
+
+      const upcomingTrips = snapshot.docs.filter((doc) => {
+        const departure = doc.data()?.flightDetails?.legs?.[0]?.departure;
+
+        return departure && new Date(departure) > now;
+      });
+
+      setBookedTripsCount(upcomingTrips.length);
     });
 
     return () => unsubscribe();
   }, []);
+
 
   // number of AI plans
   useEffect(() => {
